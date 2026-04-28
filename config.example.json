@@ -1,0 +1,12 @@
+{
+  "interval": 60,
+  "duration": 0.5,
+  "mode": "minimal",
+  "mouse_distance": 50,
+  "mouse_pattern": "linear",
+  "keyboard_key": "shift",
+  "keyboard_presses": 1,
+  "log_level": "INFO",
+  "log_file": null,
+  "enable_tray": false
+}
