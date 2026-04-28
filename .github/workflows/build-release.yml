@@ -122,7 +122,8 @@ jobs:
     needs: [build-windows, build-linux, build-macos]
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
-    
+    permissions:
+      contents: write
     outputs:
       new_tag: ${{ steps.bump.outputs.new_tag }}
       tag: ${{steps.tagout.outputs.tag}}
