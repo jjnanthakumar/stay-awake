@@ -122,11 +122,11 @@ jobs:
     needs: [build-windows, build-linux, build-macos]
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
-    permissions:
-      contents: write
+    
     outputs:
       new_tag: ${{ steps.bump.outputs.new_tag }}
-      tag: ${{steps.tagout.outputs.tag}}
+      tag: ${{ steps.bump.outputs.tag }}
+    
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
@@ -152,19 +152,14 @@ jobs:
         name: njstayawake-macos
         path: macos-build
     
-    - name: Bump version and push tag
-      uses: anothrNick/github-tag-action@1.36.0
+    - name: Determine version bump
+      id: bump
+      uses: anothrNick/github-tag-action@1.75.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         WITH_V: true
         DEFAULT_BUMP: patch
         RELEASE_BRANCHES: main
-      id: bump
-    - uses: 'marvinpinto/action-automatic-releases@latest'
-      with:
-        repo_token: '${{ secrets.GITHUB_TOKEN }}'
-        prerelease: false
-        automatic_release_tag: '${{steps.bump.outputs.tag}}'
     
     - name: Create Release
       uses: softprops/action-gh-release@v1
