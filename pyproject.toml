@@ -1,5 +1,5 @@
 [project]
-name = "stay-awake"
+name = "njstayawake"
 version = "1.0.0"
 description = "Prevent your computer from going to sleep with configurable activity simulation"
 readme = "README.md"
@@ -8,7 +8,7 @@ authors = [
     {name = "Nanthakumar J J", email = "jjnanthakumar477@gmail.om"}
 ]
 license = {text = "MIT"}
-keywords = ["stay-awake", "prevent-sleep", "mouse-mover", "automation"]
+keywords = ["njstayawake", "stay-awake", "prevent-sleep", "mouse-mover", "automation"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: End Users/Desktop",
@@ -38,13 +38,13 @@ gui = [
 ]
 
 [project.scripts]
-stay-awake = "cli:main"
-stay-awake-gui = "gui:main"
+njstayawake = "cli:main"
+njstayawake-gui = "gui:main"
 
 [project.urls]
-Homepage = "https://github.com/jjnanthakumar/stay-awake"
-Repository = "https://github.com/jjnanthakumar/stay-awake"
-Issues = "https://github.com/jjnanthakumar/stay-awake/issues"
+Homepage = "https://github.com/jjnanthakumar/njstayawake"
+Repository = "https://github.com/jjnanthakumar/njstayawake"
+Issues = "https://github.com/jjnanthakumar/njstayawake/issues"
 
 [build-system]
 requires = ["setuptools>=61.0", "wheel"]

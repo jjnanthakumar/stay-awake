@@ -1,4 +1,4 @@
-"""Core Stay Awake functionality."""
+"""Core NJStayAwake functionality."""
 
 import time
 import signal
@@ -11,7 +11,7 @@ from modes import create_mode, ActivityMode
 
 
 class StayAwake:
-    """Main Stay Awake application."""
+    """Main NJStayAwake application."""
     
     def __init__(self, config: Optional[Config] = None):
         """Initialize Stay Awake with configuration."""

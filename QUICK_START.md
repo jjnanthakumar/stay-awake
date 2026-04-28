@@ -1,10 +1,10 @@
-# Quick Start Guide - Stay Awake
+# Quick Start Guide - NJStayAwake
 
 ## For Non-Technical Users
 
-### \ud83d\udcbb Using the Standalone Executable (Easiest!)
+### 🖥️ Using the Standalone Executable (Easiest!)
 
-1. **Download**: Get `StayAwake.exe` from the releases page
+1. **Download**: Get `NJStayAwake.exe` from the releases page
 2. **Run**: Double-click the executable
 3. **Configure**: 
    - Select your preferred mode (Minimal is recommended for most users)

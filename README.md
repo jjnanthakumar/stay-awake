@@ -1,9 +1,10 @@
-# Stay Awake
+# NJStayAwake
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
+![PyPI](https://img.shields.io/pypi/v/njstayawake.svg)
 
-**Stay Awake** is a lightweight, configurable Python application that prevents your computer from going to sleep by simulating user activity. Perfect for presentations, long downloads, or when you need to keep your system active.
+**NJStayAwake** is a lightweight, configurable Python application that prevents your computer from going to sleep by simulating user activity. Perfect for presentations, long downloads, or when you need to keep your system active.
 
 ## ✨ Features
 
@@ -34,23 +35,46 @@
 
 ### Option 1: Download Standalone EXE (Easiest - No Python Required!)
 
-1. Download the latest release from the [Releases page](https://github.com/jjnanthakumar/stay-awake/releases)
-2. Run `StayAwake.exe` (GUI) or `stay-awake-cli.exe` (CLI)
-3. No installation needed!
+**[📥 Download Latest Release](https://github.com/jjnanthakumar/njstayawake/releases/latest)**
+
+**Windows:**
+- 🖱️ GUI: Download `NJStayAwake.exe` - Just double-click to run!
+- 💻 CLI: Download `njstayawake-cli.exe`
+
+**Linux:**
+- 🖱️ GUI: Download `NJStayAwake` - Run: `chmod +x NJStayAwake && ./NJStayAwake`
+- 💻 CLI: Download `njstayawake-cli`
+
+**macOS:**
+- 🖱️ GUI: Download `NJStayAwake` - Right-click → Open (first time)
+- 💻 CLI: Download `njstayawake-cli`
+
+No extraction needed! Direct download and run! 🚀
 
 ### Option 2: Clone and Install (For Developers)
 
 ```bash
-git clone https://github.com/jjnanthakumar/stay-awake.git
-cd stay-awake
+git clone https://github.com/jjnanthakumar/njstayawake.git
+cd njstayawake
 pip install -e .
 ```
 
-### Option 3: Direct Install via pip (after publishing)
+### Option 3: Install via pip (Automatically Published!)
 
 ```bash
-pip install stay-awake
+pip install njstayawake
 ```
+
+Then run:
+```bash
+# GUI
+njstayawake-gui
+
+# CLI
+njstayawake --mode mouse --interval 60
+```
+
+**Note:** PyPI package is automatically published when new versions are released on GitHub!
 
 ### Requirements (for Python installation)
 
@@ -67,9 +91,9 @@ pip install stay-awake
 python gui.py
 
 # Or if installed via pip
-stay-awake-gui
+njstayawake-gui
 
-# Or just double-click StayAwake.exe (Windows)
+# Or just double-click NJStayAwake.exe (Windows)
 ```
 
 The GUI provides:
@@ -86,9 +110,9 @@ The GUI provides:
 python cli.py
 
 # Or if installed via pip
-stay-awake
+njstayawake
 
-# Or use stay-awake-cli.exe (Windows)
+# Or use njstayawake-cli.exe (Windows)
 ```
 
 ### Common Use Cases
@@ -275,6 +299,34 @@ Total runtime: 1h 15m 30s
 ```
 
 ## 🏗️ Building Standalone Executables
+
+### Automatic Builds via GitHub Actions
+
+**No manual tagging needed!** Just commit and push:
+
+```bash
+git add .
+git commit -m "feat: add new feature"  # Use conventional commits
+git push origin main
+```
+
+GitHub Actions automatically:
+- Analyzes your commit message
+- Bumps version (patch/minor/major)
+- Builds executables for Windows, Linux, and macOS
+- Creates GitHub release with direct download links
+- Uploads individual executables (no ZIP needed!)
+- **Publishes package to PyPI with matching version**
+- **Users can `pip install stay-awake` immediately!**
+
+**Commit Message Guide:**
+- `feat:` - New feature (bumps minor version)
+- `fix:` - Bug fix (bumps patch version)
+- `BREAKING CHANGE:` - Major change (bumps major version)
+
+See [COMMITS.md](COMMITS.md) for full conventional commits guide.
+
+### Manual Build (Local)
 
 Create executables that run without Python installed:
 

@@ -1,4 +1,4 @@
-"""Command-line interface for Stay Awake."""
+"""Command-line interface for NJStayAwake."""
 
 import argparse
 import sys
@@ -11,18 +11,18 @@ from core import StayAwake
 def create_parser() -> argparse.ArgumentParser:
     """Create and configure the argument parser."""
     parser = argparse.ArgumentParser(
-        prog='stay-awake',
+        prog='njstayawake',
         description='Prevent your computer from going to sleep by simulating user activity.',
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  stay-awake                          # Run with default settings (minimal mode, 60s interval)
-  stay-awake --mode mouse             # Use mouse movement mode
-  stay-awake --interval 30            # Check every 30 seconds
-  stay-awake --mode full --interval 120  # Full mode (mouse + keyboard) every 2 minutes
-  stay-awake --config myconfig.json   # Load settings from config file
-  stay-awake --save-config            # Save current settings to config file
-  stay-awake --pattern circle         # Use circular mouse movement pattern
+  njstayawake                          # Run with default settings (minimal mode, 60s interval)
+  njstayawake --mode mouse             # Use mouse movement mode
+  njstayawake --interval 30            # Check every 30 seconds
+  njstayawake --mode full --interval 120  # Full mode (mouse + keyboard) every 2 minutes
+  njstayawake --config myconfig.json   # Load settings from config file
+  njstayawake --save-config            # Save current settings to config file
+  njstayawake --pattern circle         # Use circular mouse movement pattern
 
 Modes:
   minimal  - Single key press (least intrusive)

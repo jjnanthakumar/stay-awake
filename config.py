@@ -1,4 +1,4 @@
-"""Configuration management for Stay Awake."""
+"""Configuration management for NJStayAwake."""
 
 import json
 import os
@@ -9,7 +9,7 @@ from typing import Optional
 
 @dataclass
 class Config:
-    """Configuration settings for Stay Awake."""
+    """Configuration settings for NJStayAwake."""
     
     # Timing settings
     interval: int = 60  # Seconds between activities
@@ -54,7 +54,7 @@ class Config:
         if os.name == 'nt':  # Windows
             config_dir = Path(os.environ.get('APPDATA', '~')) / 'StayAwake'
         else:  # Unix-like
-            config_dir = Path.home() / '.config' / 'stay-awake'
+            config_dir = Path.home() / '.config' / 'njstayawake'
         
         config_dir.mkdir(parents=True, exist_ok=True)
         return config_dir / 'config.json'

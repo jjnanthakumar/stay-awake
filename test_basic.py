@@ -87,7 +87,7 @@ def test_mode_creation():
 def main():
     """Run all tests."""
     print("=" * 60)
-    print("Stay Awake - Functionality Test")
+    print("NJStayAwake - Functionality Test")
     print("=" * 60)
     
     try:

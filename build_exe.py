@@ -23,7 +23,7 @@ def build_cli_exe():
     
     args = [
         'cli.py',
-        '--name=stay-awake-cli',
+        '--name=njstayawake-cli',
         '--onefile',
         '--console',
         '--icon=NONE',
@@ -61,7 +61,7 @@ def build_gui_exe():
 
 def main():
     """Main build process."""
-    print("Stay Awake - Executable Builder")
+    print("NJStayAwake - Executable Builder")
     print("=" * 60)
     print(f"Platform: {platform.system()}")
     print(f"Python: {platform.python_version()}")
@@ -79,7 +79,7 @@ def main():
         
         if platform.system() == "Windows":
             print("  - StayAwake.exe (GUI version)")
-            print("  - stay-awake-cli.exe (Command-line version)")
+            print("  - njstayawake-cli.exe (Command-line version)")
         elif platform.system() == "Darwin":  # macOS
             print("  - StayAwake (GUI version)")
             print("  - stay-awake-cli (Command-line version)")

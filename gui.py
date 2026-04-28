@@ -1,6 +1,6 @@
 """
-Graphical User Interface for Stay Awake.
-Provides an easy-to-use interface for all Stay Awake features.
+Graphical User Interface for NJStayAwake.
+Provides an easy-to-use interface for all NJStayAwake features.
 """
 
 import tkinter as tk
@@ -15,11 +15,11 @@ from core import StayAwake
 
 
 class StayAwakeGUI:
-    """GUI application for Stay Awake."""
+    """GUI application for NJStayAwake."""
     
     def __init__(self, root):
         self.root = root
-        self.root.title("Stay Awake - Prevent Sleep")
+        self.root.title("NJStayAwake - Prevent Sleep")
         self.root.geometry("600x750")
         self.root.resizable(True, True)
         
@@ -51,7 +51,7 @@ class StayAwakeGUI:
         
         ttk.Label(
             title_frame,
-            text="Stay Awake",
+            text="NJStayAwake",
             font=("Arial", 18, "bold")
         ).pack()
         
@@ -312,7 +312,7 @@ class StayAwakeGUI:
         
         ttk.Label(
             footer,
-            text="Stay Awake v1.0.0 | Press Stop or close window to exit",
+            text="NJStayAwake v1.0.0 | Press Stop or close window to exit",
             font=("Arial", 8),
             foreground="gray"
         ).pack()
@@ -459,7 +459,7 @@ class StayAwakeGUI:
             title="Save Configuration",
             filetypes=[("JSON files", "*.json"), ("All files", "*.*")],
             defaultextension=".json",
-            initialfile="stay-awake-config.json"
+            initialfile="njstayawake-config.json"
         )
         
         if filename:
@@ -475,7 +475,7 @@ class StayAwakeGUI:
         if self.running:
             if messagebox.askokcancel(
                 "Quit",
-                "Stay Awake is currently running. Do you want to stop and exit?"
+                "NJStayAwake is currently running. Do you want to stop and exit?"
             ):
                 self._stop_service()
                 self.root.destroy()

@@ -1,11 +1,11 @@
-# Contributing to Stay Awake
+# Contributing to NJStayAwake
 
-Thank you for your interest in contributing to Stay Awake! This document provides guidelines for contributing to the project.
+Thank you for your interest in contributing to NJStayAwake! This document provides guidelines for contributing to the project.
 
 ## Getting Started
 
 1. Fork the repository
-2. Clone your fork: `git clone https://github.com/jjnanthakumar/stay-awake.git`
+2. Clone your fork: `git clone https://github.com/jjnanthakumar/njstayawake.git`
 3. Create a virtual environment: `python -m venv venv`
 4. Activate it:
    - Windows: `venv\Scripts\activate`

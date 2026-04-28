@@ -1,4 +1,4 @@
-# Stay Awake - Usage Comparison
+# NJStayAwake - Usage Comparison
 
 ## Choose Your Interface
 
@@ -88,13 +88,13 @@
 ### GUI/CLI (Python Required)
 ```bash
 # Method 1: Clone repository
-git clone https://github.com/jjnanthakumar/stay-awake.git
-cd stay-awake
+git clone https://github.com/jjnanthakumar/njstayawake.git
+cd njstayawake
 python gui.py  # or python cli.py
 
 # Method 2: Install with pip
-pip install stay-awake
-stay-awake-gui  # or stay-awake
+pip install njstayawake
+njstayawake-gui  # or njstayawake
 ```
 
 **Pros**: Latest features, easy updates  
