@@ -35,7 +35,7 @@
 
 ### Option 1: Download Standalone EXE (Easiest - No Python Required!)
 
-**[📥 Download Latest Release](https://github.com/jjnanthakumar/njstayawake/releases/latest)**
+**[📥 Download Latest Release](https://github.com/jjnanthakumar/stay-awake/releases/latest)**
 
 **Windows:**
 - 🖱️ GUI: Download `NJStayAwake.exe` - Just double-click to run!
@@ -54,8 +54,8 @@ No extraction needed! Direct download and run! 🚀
 ### Option 2: Clone and Install (For Developers)
 
 ```bash
-git clone https://github.com/jjnanthakumar/njstayawake.git
-cd njstayawake
+git clone https://github.com/jjnanthakumar/stay-awake.git
+cd stay-awake
 pip install -e .
 ```
 

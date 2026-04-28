@@ -88,8 +88,8 @@
 ### GUI/CLI (Python Required)
 ```bash
 # Method 1: Clone repository
-git clone https://github.com/jjnanthakumar/njstayawake.git
-cd njstayawake
+git clone https://github.com/jjnanthakumar/stay-awake.git
+cd stay-awake
 python gui.py  # or python cli.py
 
 # Method 2: Install with pip

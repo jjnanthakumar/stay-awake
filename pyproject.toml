@@ -42,9 +42,9 @@ njstayawake = "cli:main"
 njstayawake-gui = "gui:main"
 
 [project.urls]
-Homepage = "https://github.com/jjnanthakumar/njstayawake"
-Repository = "https://github.com/jjnanthakumar/njstayawake"
-Issues = "https://github.com/jjnanthakumar/njstayawake/issues"
+Homepage = "https://github.com/jjnanthakumar/stay-awake"
+Repository = "https://github.com/jjnanthakumar/stay-awake"
+Issues = "https://github.com/jjnanthakumar/stay-awake/issues"
 
 [build-system]
 requires = ["setuptools>=61.0", "wheel"]

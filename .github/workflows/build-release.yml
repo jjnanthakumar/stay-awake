@@ -135,23 +135,30 @@ jobs:
         fetch-depth: 0
         persist-credentials: false
     
-    - name: Download Windows artifacts
+    - name: Download all artifacts
       uses: actions/download-artifact@v4
       with:
-        name: njstayawake-windows
-        path: windows-build
+        path: artifacts
     
-    - name: Download Linux artifacts
-      uses: actions/download-artifact@v4
-      with:
-        name: njstayawake-linux
-        path: linux-build
+    - name: List artifacts (debug)
+      run: |
+        echo "Listing artifacts structure:"
+        ls -R artifacts/
     
-    - name: Download macOS artifacts
-      uses: actions/download-artifact@v4
-      with:
-        name: njstayawake-macos
-        path: macos-build
+    - name: Organize files for release
+      run: |
+        mkdir -p release
+        cp artifacts/njstayawake-windows/dist/NJStayAwake.exe release/NJStayAwake.exe || true
+        cp artifacts/njstayawake-windows/dist/njstayawake-cli.exe release/njstayawake-cli-windows.exe || true
+        cp artifacts/njstayawake-linux/dist/NJStayAwake release/NJStayAwake-linux || true
+        cp artifacts/njstayawake-linux/dist/njstayawake-cli release/njstayawake-cli-linux || true
+        cp artifacts/njstayawake-macos/dist/NJStayAwake release/NJStayAwake-macos || true
+        cp artifacts/njstayawake-macos/dist/njstayawake-cli release/njstayawake-cli-macos || true
+        cp artifacts/njstayawake-windows/README.md release/README.md || true
+        cp artifacts/njstayawake-windows/LICENSE release/LICENSE || true
+        cp artifacts/njstayawake-windows/QUICK_START.md release/QUICK_START.md || true
+        echo "Files organized:"
+        ls -la release/
     
     - name: Determine version bump
       id: bump
@@ -169,15 +176,15 @@ jobs:
         tag_name: ${{ steps.bump.outputs.new_tag }}
         name: NJStayAwake ${{ steps.bump.outputs.new_tag }}
         files: |
-          windows-build/NJStayAwake.exe
-          windows-build/njstayawake-cli.exe
-          linux-build/NJStayAwake
-          linux-build/njstayawake-cli
-          macos-build/NJStayAwake
-          macos-build/njstayawake-cli
-          README.md
-          LICENSE
-          QUICK_START.md
+          release/NJStayAwake.exe
+          release/njstayawake-cli-windows.exe
+          release/NJStayAwake-linux
+          release/njstayawake-cli-linux
+          release/NJStayAwake-macos
+          release/njstayawake-cli-macos
+          release/README.md
+          release/LICENSE
+          release/QUICK_START.md
         body: |
           ## NJStayAwake ${{ steps.bump.outputs.new_tag }}
           
@@ -185,15 +192,15 @@ jobs:
           
           **Windows Users:**
           - 🖱️ GUI: Download [`NJStayAwake.exe`](https://github.com/${{ github.repository }}/releases/download/${{ steps.bump.outputs.new_tag }}/NJStayAwake.exe) - Just double-click to run!
-          - 💻 CLI: Download [`njstayawake-cli.exe`](https://github.com/${{ github.repository }}/releases/download/${{ steps.bump.outputs.new_tag }}/njstayawake-cli.exe)
+          - 💻 CLI: Download [`njstayawake-cli-windows.exe`](https://github.com/${{ github.repository }}/releases/download/${{ steps.bump.outputs.new_tag }}/njstayawake-cli-windows.exe)
           
           **Linux Users:**
-          - 🖱️ GUI: Download [`NJStayAwake`](https://github.com/${{ github.repository }}/releases/download/${{ steps.bump.outputs.new_tag }}/NJStayAwake) - Run: `chmod +x NJStayAwake && ./NJStayAwake`
-          - 💻 CLI: Download [`njstayawake-cli`](https://github.com/${{ github.repository }}/releases/download/${{ steps.bump.outputs.new_tag }}/njstayawake-cli)
+          - 🖱️ GUI: Download [`NJStayAwake-linux`](https://github.com/${{ github.repository }}/releases/download/${{ steps.bump.outputs.new_tag }}/NJStayAwake-linux) - Run: `chmod +x NJStayAwake-linux && ./NJStayAwake-linux`
+          - 💻 CLI: Download [`njstayawake-cli-linux`](https://github.com/${{ github.repository }}/releases/download/${{ steps.bump.outputs.new_tag }}/njstayawake-cli-linux)
           
           **macOS Users:**
-          - 🖱️ GUI: Download [`NJStayAwake`](https://github.com/${{ github.repository }}/releases/download/${{ steps.bump.outputs.new_tag }}/NJStayAwake) - Right-click → Open (first time)
-          - 💻 CLI: Download [`njstayawake-cli`](https://github.com/${{ github.repository }}/releases/download/${{ steps.bump.outputs.new_tag }}/njstayawake-cli)
+          - 🖱️ GUI: Download [`NJStayAwake-macos`](https://github.com/${{ github.repository }}/releases/download/${{ steps.bump.outputs.new_tag }}/NJStayAwake-macos) - Right-click → Open (first time)
+          - 💻 CLI: Download [`njstayawake-cli-macos`](https://github.com/${{ github.repository }}/releases/download/${{ steps.bump.outputs.new_tag }}/njstayawake-cli-macos)
           
           ### ✨ Features
           - 🎨 User-friendly GUI with real-time monitoring
