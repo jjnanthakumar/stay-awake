@@ -26,7 +26,7 @@ def build_cli_exe():
         '--name=njstayawake-cli',
         '--onefile',
         '--console',
-        '--icon=NONE',
+        '--icon=logo.png',
         '--add-data=config.py:.',
         '--add-data=modes.py:.',
         '--add-data=core.py:.',
@@ -45,10 +45,11 @@ def build_gui_exe():
     
     args = [
         'gui.py',
-        '--name=StayAwake',
+        '--name=NJStayAwake',
         '--onefile',
         '--windowed',  # No console window
-        '--icon=NONE',
+        '--icon=logo.png',
+        '--add-data=logo.png:.',
         '--add-data=config.py:.',
         '--add-data=modes.py:.',
         '--add-data=core.py:.',

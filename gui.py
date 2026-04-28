@@ -23,6 +23,15 @@ class StayAwakeGUI:
         self.root.geometry("600x750")
         self.root.resizable(True, True)
         
+        # Set window icon
+        try:
+            logo_path = Path(__file__).parent / "logo.png"
+            if logo_path.exists():
+                icon = tk.PhotoImage(file=str(logo_path))
+                self.root.iconphoto(True, icon)
+        except Exception as e:
+            pass  # Fallback to default icon if logo not found
+        
         # App state
         self.stay_awake = None
         self.running = False
